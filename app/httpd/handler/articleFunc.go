@@ -24,7 +24,7 @@ type ArticlesPostRequest struct {
 // ArticlesPost is handler func for Articles with POST method
 func ArticlesPost(post *article.Articles) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		requestBody := ArticlesPostRequest{}
+		var requestBody ArticlesPostRequest
 		c.Bind(&requestBody)
 
 		item := article.Item{
